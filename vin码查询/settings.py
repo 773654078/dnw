@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'users',
     'vin_search',
     'product',
+    'items',
     'indexpage',
     'django.contrib.admin',
     'django.contrib.auth',
