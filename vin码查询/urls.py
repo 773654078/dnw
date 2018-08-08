@@ -25,6 +25,9 @@ urlpatterns = [
     url(r'^vin_search/', include('vin_search.urls')),
     # url(r'^admin/users/myuser/add/', include('users.urls')),
     url(r'^admin/', admin.site.urls),
-    path('product/', include('product.urls'))
+    #开产品和项目
+    path('product/', include('product.urls')),
+    #项目录入
+    path('items/', include('items.urls'))
 
 ]
