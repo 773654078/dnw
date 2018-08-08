@@ -153,7 +153,7 @@ JET_SIDE_MENU_ITEMS = [
     {'app_label': 'product', 'items': [
         {'name': 'productitems'},
         {'label': '测试', 'url': 'http://127.0.0.1:8000/product/order', 'url_blank': False},
-        # {'label': '测试1', 'url': 'http://127.0.0.1:8000/product/test', 'url_blank': False},
+        {'label': '测试1', 'url': 'http://127.0.0.1:8000/items/create', 'url_blank': False},
     ]},
 
 ]
