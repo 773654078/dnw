@@ -6,22 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eea0b135-18c9-4ba6-933b-8da27e3f3d1a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexpage/templates/indexpage/index.html" afterPath="$PROJECT_DIR$/indexpage/templates/indexpage/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/indexpage/views.py" afterPath="$PROJECT_DIR$/indexpage/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/items/models.py" afterPath="$PROJECT_DIR$/items/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/items/serializers.py" afterPath="$PROJECT_DIR$/items/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/items/templates/items/addItems.html" afterPath="$PROJECT_DIR$/items/templates/items/addItems.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/items/urls.py" afterPath="$PROJECT_DIR$/items/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/items/views.py" afterPath="$PROJECT_DIR$/items/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product/admin.py" afterPath="$PROJECT_DIR$/product/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product/models.py" afterPath="$PROJECT_DIR$/product/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product/templates/product/test.html" afterPath="$PROJECT_DIR$/product/templates/product/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/product/views.py" afterPath="$PROJECT_DIR$/product/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/store/admin.py" afterPath="$PROJECT_DIR$/store/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/store/models.py" afterPath="$PROJECT_DIR$/store/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vin码查询/urls.py" afterPath="$PROJECT_DIR$/vin码查询/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,7 +46,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/items/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="494">
@@ -68,6 +54,16 @@
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="102" lean-forward="false" selection-start-line="10" selection-start-column="102" selection-end-line="10" selection-end-column="102" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -202,7 +198,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vin_search/check_vin.py" />
         <option value="$PROJECT_DIR$/vin_search/templates/vin_search/vin_check_false.html" />
         <option value="$PROJECT_DIR$/vin_search/apps.py" />
         <option value="$PROJECT_DIR$/vin码查询/__init__.py" />
@@ -253,6 +248,7 @@
         <option value="$PROJECT_DIR$/items/serializers.py" />
         <option value="$PROJECT_DIR$/items/models.py" />
         <option value="$PROJECT_DIR$/items/views.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -533,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1533997196418</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge branch 'master' of https://github.com/773654078/dnw&#10;&#10;# Conflicts:&#10;#&#9;创建项目后台api完成">
+      <created>1533997415529</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1533997415529</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -547,10 +550,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3441341" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -628,7 +632,8 @@
     <MESSAGE value="vin码校验&amp;vin码年份识别" />
     <MESSAGE value="vin码校验" />
     <MESSAGE value="Merge branch 'master' of https://github.com/773654078/dnw&#10;&#10;# Conflicts:&#10;#&#9;vin码查询/__pycache__/settings.cpython-36.pyc&#10;#&#9;vin码查询/__pycache__/urls.cpython-36.pyc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/773654078/dnw&#10;&#10;# Conflicts:&#10;#&#9;vin码查询/__pycache__/settings.cpython-36.pyc&#10;#&#9;vin码查询/__pycache__/urls.cpython-36.pyc" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/773654078/dnw&#10;&#10;# Conflicts:&#10;#&#9;创建项目后台api完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/773654078/dnw&#10;&#10;# Conflicts:&#10;#&#9;创建项目后台api完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -721,7 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/store/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1038,6 +1042,14 @@
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="102" lean-forward="false" selection-start-line="10" selection-start-column="102" selection-end-line="10" selection-end-column="102" />
+          <folding />
         </state>
       </provider>
     </entry>
