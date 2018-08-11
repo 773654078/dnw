@@ -21,71 +21,92 @@
     <!--JavaScript部分-->
     <script type="text/javascript">
        $(document).ready(function() {
-           var stepnumber=0;
-            $("#add").click(function() {
-                var lastField = $("#buildyourform div:last");
-                var intId = (lastField && lastField.length && lastField.data("idx") + 1) || 1;
-                var fieldWrapper = $("<div class=\"fieldwrapper\" id=\"field" + intId + "\"/>");
-                fieldWrapper.data("idx", intId);
-                var stepNum = $("<input type=\"button\" value=\"填写步骤\" class=\"stepnum\"/>");
-                var stepName = $("<input type=\"button\" value=\"步骤名称:\" class=\"stepname\"/>");
-                var fName = $("<input type=\"text\" class=\"fieldname\" />");
-                var fType = $("<select class=\"fieldtype\"><option value=\"checkbox\">Checked</option><option value=\"textbox\">Text</option><option value=\"textarea\">Paragraph</option></select>");
-                var removeButton = $("<input type=\"button\" class=\"remove\" value=\"-\" />");
-                removeButton.click(function() {
-                    $(this).parent().remove();
-                });
-                //fieldWrapper.append(stepNum);
-                fieldWrapper.append(stepName);
-                fieldWrapper.append(fName);
-                fieldWrapper.append(fType);
-                fieldWrapper.append(removeButton);
-                $("#buildyourform").append(fieldWrapper);
-            });
-            $("#preview").click(function() {
-                $("#yourform").remove();
-                var fieldSet = $("<fieldset id=\"yourform\"><legend>Your Form</legend></fieldset>");
-                $("#buildyourform div").each(function() {
-                    var id = "input" + $(this).attr("id").replace("field","");
-                    var label = $("<label for=\"" + id + "\">" + $(this).find("input.fieldname").first().val() + "</label>");
-                    var input;
-                    switch ($(this).find("select.fieldtype").first().val()) {
-                        case "checkbox":
-                            input = $("<input type=\"checkbox\" id=\"" + id + "\" name=\"" + id + "\" />");
-                            break;
-                        case "textbox":
-                            input = $("<input type=\"text\" id=\"" + id + "\" name=\"" + id + "\" />");
-                            break;
-                        case "textarea":
-                            input = $("<textarea id=\"" + id + "\" name=\"" + id + "\" ></textarea>");
-                            break;
-                    }
-                    fieldSet.append(label);
-                    fieldSet.append(input);
-                });
-                $("body").append(fieldSet);
-            });
+
+
             $("#commit").click(function (){
+                var name = $("#item_name").val();
+                var price = $("#item_price").val();
+                var freq = $("#frequency").val();
+                var steps =[];
+                var num=0;
+                for(var i=0;i<$(".step").length;i++)
+                {
+                    num=i+1;
+                    steps.push({
+                       'step_num':num,'step_content':$(".step")[i].value
+                    });
+                }
+                console.log(steps);
                  $.ajax({
-                     url: "/product/create",
+                     url: "/items/api/create/",
                      type: "put",
                      dataType: "json",
                      data: JSON.stringify({
-                        pName: '面膜_增加测试',
-                        pprice: '30',
-                        pnumber: 50
+                         "item_name": name,
+                         "item_price": price,
+                         "frequency": freq,
+                         "steps": steps
                     }),
-                         success: function (data) {
-                         $("#add").append("<p> 数据增加成功：" + data.item_name + "</p>");
+                     success: function (data) {
+                         $("#test").append("<p> 数据增加成功：" + data.text + "</p>");
                      },
                      error: function (data) {
-                         $("#add").append("<p>出错了</p>");
+                         $("#test").append("<p>出错了</p>");
                      }
                  })
              });
 
 
         });
+    </script>
+
+    <script type="text/javascript">
+			var i=0;
+			function addRow(){
+				i+=1;
+				var node=document.createElement("li");
+				node.classList.add("input-group");
+				node.classList.add("container");
+				node.classList.add("form-inline");
+                node.id="li" + i;
+				var diver1=document.createElement("div");
+				diver1.classList.add("form-group");
+				diver1.setAttribute("style","float:left");
+				diver1.innerHTML=i;
+                var inputer=document.createElement("input");
+                inputer.classList.add("step");
+                inputer.classList.add("form-control");
+                inputer.setAttribute("style","width:80%");
+                inputer.id = i;
+                var diver2=document.createElement("div");
+                diver2.classList.add("form-group");
+				var btn1=document.createElement("input");
+				btn1.setAttribute("type","button");
+                btn1.setAttribute("value","添加产品");
+                btn1.setAttribute("onclick","addgoods()")
+                var btn2=document.createElement("input");
+				btn2.setAttribute("type","button");
+                btn2.setAttribute("value","添加仪器");
+                btn2.setAttribute("onclick","addinstrument()")
+                diver2.appendChild(btn1);
+                diver2.appendChild(btn2);
+				node.appendChild(diver1);
+				node.appendChild(inputer);
+				node.appendChild(diver2);
+				document.getElementById("a").appendChild(node);
+			};
+			function delRow(){
+				var parent=document.getElementById("a");
+				var child=document.getElementById("li"+i);
+				parent.removeChild(child);
+				i-=1;
+			};
+			function addgoods() {
+
+            }
+            function addinstrument() {
+                
+            }
     </script>
 <style type="text/css">
     body
@@ -174,9 +195,17 @@ fieldset.yourform
 </div>
 <fieldset id="buildyourform" class="yourform">
     <legend>添加步骤</legend>
+	<div class="a">
+			<input type="button" value="添加一行" onclick="addRow()"/>
+			<input type="button" value="删除一行" onclick="delRow()"/>
+			<ul id="a" class="">
+			</ul>
+    </div>
 </fieldset>
-<!--<input type="button" value="Preview form" class="add" id="preview"/>-->
-<input type="button" value="添加步骤" class="add" id="add" />
+
 <hr/>
+
+
 <input type="button" value="提交" class="add" id="commit" />
+    <div id="test"></div>
 {% endblock %}

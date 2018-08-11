@@ -14,7 +14,7 @@ class Customer_ADMIN(admin.ModelAdmin):
     fieldsets = (
         ('客户基本信息', {
 
-                         'fields': ('name', 'phone', 'qq_num', 'store', 'web_staff', 'state', 'order_num', 'order_time', 'hospital', 'doctor', 'register_time')}
+                         'fields': ('name', 'phone', 'phone1', 'note', 'qq_num','sex', 'age', 'area', 'store', 'web_staff', 'state', 'order_num', 'order_time', 'hospital', 'doctor', 'register_time')}
 
         ),
     )
@@ -52,9 +52,7 @@ class Customer_ADMIN2(admin.ModelAdmin):
     list_display = ['name', 'phone', 'state', 'web_staff']
     fieldsets = (
         ('客户信息', {
-
-            'fields': ('name', 'phone', 'store', 'front_staff', 'beauty_consultant', 'sex', 'age', 'constellation', 'address', 'job', 'order_time')}
-
+            'fields': ('name', 'phone', 'phone1', 'note', 'qq_num', 'sex', 'age', 'area', 'store', 'front_staff', 'beauty_consultant', 'state', 'order_num', 'order_time', 'hospital', 'doctor','register_time')}
          ),
     )
     class Media:
@@ -109,11 +107,11 @@ class Customer3(Customer):
 
 class Customer_ADMIN3(admin.ModelAdmin):
     search_fields = ['name', 'phone']
-    list_display = ['name', 'phone', 'back_date']
+    list_display = ['name', 'phone', 'back_date', 'back_note']
     fieldsets = (
         ('客户信息', {
             'fields': (
-            'name', 'phone', 'back_date')}
+            'name', 'phone', 'back_date', 'back_note')}
          ),
     )
     readonly_fields = ('name', 'phone', )
@@ -138,14 +136,14 @@ class Customer4(Customer):
 
 class Customer_ADMIN4(admin.ModelAdmin):
     search_fields = ['name', 'phone']
-    list_display = ['name', 'phone', 'back_date']
+    list_display = ['name', 'phone', 'back_date', 'back_note']
     fieldsets = (
         ('客户信息', {
             'fields': (
-            'name', 'phone', 'back_date')}
+            'name', 'phone', 'back_date', 'back_note')}
          ),
     )
-    readonly_fields = ('name', 'phone', 'back_date')
+    readonly_fields = ('name', 'phone', 'back_date', 'back_note')
 
     class Meta:
         model = Customer
@@ -172,7 +170,7 @@ class Customer_ADMIN5(admin.ModelAdmin):
     fieldsets = (
         ('客户信息', {
             'fields': (
-            'name', 'phone', 'store', 'front_staff', 'ill_place', 'ill_time', 'ill_kind')}
+            'name', 'phone','phone1', 'note', 'qq_num', 'sex', 'age', 'area', 'store', 'front_staff', 'ill_place', 'ill_time', 'ill_kind')}
          ),
     )
     readonly_fields = ('name', 'phone', 'store', 'front_staff')

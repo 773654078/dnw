@@ -47,7 +47,7 @@
                   success:function (data) {
                          var jsonData = JSON.parse(data);
                          var result = new Array();
-                         result = jsonData.pName;
+                         result = jsonData.name;
                          $('#search_name').autocomplete(
                          {
                               source: result
@@ -99,14 +99,14 @@
                         field: 'id',
                         title: '产品编号'
                     }, {
-                        field: 'pName',
+                        field: 'name',
                         title: '产品名'
                     }, {
-                        field: 'pprice',
+                        field: 'price',
                         title: '价格'
 
                     }, {
-                        field: 'pnumber',
+                        field: 'number',
                         title: '数量'
                     },{
                         field:'operate',

@@ -3,7 +3,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import json
-from .models import productItems
+from .models import Product
 from django.views.decorators.csrf import csrf_exempt
 #ajax获取列表信息
 @csrf_exempt
@@ -13,18 +13,18 @@ def get_product_json(request):
     pagSize = int(pagSize)
     pageIndex = request.POST.get('pageIndex')
     pageIndex = int(pageIndex)
-    pName = request.POST.get('productName')
+    name = request.POST.get('productName')
     start = pageIndex*pagSize-pagSize
     #print(start)
     end = pageIndex*pagSize
     dict = {}
-    product_List = productItems.objects.all()
+    product_List = Product.objects.all()
     product_List = product_List.values()
     product_List = [entry for entry in product_List]
     number_list = len(product_List)
-    if(pName==''):
+    if(name==''):
        #传到后台的json
-       product_List = productItems.objects.all()
+       product_List = Product.objects.all()
        product_List = product_List.values()
        product_List = [entry for entry in product_List]
        product_List = product_List[start:end]
@@ -33,7 +33,7 @@ def get_product_json(request):
        for p_list in product_List:
           dict['rows'].append(p_list)
     else:
-        product_List =productItems.objects.filter(pName__contains=pName)
+        product_List =Product.objects.filter(name__contains=name)
         product_List = product_List.values()
         product_List = [entry for entry in product_List]
         product_List = product_List[start:end]
@@ -50,13 +50,13 @@ def get_product_json(request):
 def search_auto_result(request):
     keyword = request.GET.get('kwd')
     # print(keyword)
-    product_List = productItems.objects.filter(pName__contains=keyword)
+    product_List = Product.objects.filter(name__contains=keyword)
     product_List = product_List.values()
     product_List = [entry for entry in product_List]
     dict = {}
-    dict['pName'] = []
+    dict['name'] = []
     for atuo_list in product_List:
-           dict['pName'].append(atuo_list['pName'])
+           dict['name'].append(atuo_list['name'])
     return HttpResponse(json.dumps(dict))
 
 #测试一

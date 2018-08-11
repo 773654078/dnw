@@ -1,11 +1,18 @@
 from django.contrib import admin
-from .models import productItems
+from .models import Product, Instrument
+
+
 # Register your models here.
 
 #产品录入
 
-class productAamin(admin.ModelAdmin):
-    search_fields = ['pName']
-    list_display = ['pName', 'pprice', 'pnumber']
+class productAdmin(admin.ModelAdmin):
+    search_fields = ['name']
+    list_display = ['name', 'price', 'number']
 
-admin.site.register(productItems, productAamin)
+admin.site.register(Product, productAdmin)
+
+class instrumentAdmin(admin.ModelAdmin):
+     search_fields = ['name']
+     list_display = ['name']
+admin.site.register(Instrument, instrumentAdmin)
