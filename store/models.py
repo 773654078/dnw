@@ -14,17 +14,21 @@ class Customer(models.Model):
         (2, u'新单'),
         (3, u'已完成'),
     )
+    age_tuple = (
+        (0, u'男'),
+        (1, u'女'),
+    )
 
     is_from_web = models.BooleanField(verbose_name="是否由网络客服录入", default=True, editable=False)
 
     name = models.CharField(max_length=20, verbose_name="姓名", null=True)
     phone = models.CharField(max_length=20, verbose_name="手机号")
     phone1 = models.CharField(max_length=20, verbose_name="手机号2", null=True, blank=True)
-    note = models.CharField(max_length=500, verbose_name="咨询备注", null=True, blank=True)
+    note = models.TextField(verbose_name="咨询备注", null=True, blank=True)
     state = models.IntegerField(choices=state_tuple, verbose_name="赴约状态", default=0)
     store = models.ForeignKey(LastStore, verbose_name="门店", related_name='web_staff', on_delete=models.DO_NOTHING, null=True, blank=True)
     web_staff = models.ForeignKey(MyUser, verbose_name="网络客服", related_name='web_staff', on_delete=models.DO_NOTHING, null=True, blank=True)
-    sex = models.CharField(max_length=20, verbose_name="性别", default='', blank=True)
+    sex = models.IntegerField(choices=age_tuple, verbose_name="性别", default='', blank=True)
     age = models.CharField(max_length=20, verbose_name="年龄", default='', blank=True)
     constellation = models.CharField(max_length=20, verbose_name="星座", default='', blank=True)
     address = models.CharField(max_length=50, verbose_name="住址", default='', blank=True)
@@ -58,6 +62,15 @@ class Customer(models.Model):
     area = models.CharField(max_length=50, verbose_name="区域", null=True, blank=True)
     back_note = models.CharField(max_length=500, verbose_name="回访备注", null=True, blank=True)
 
+    # 新增字段 2018-8-14
+    # 生日
+    birthday = models.CharField(max_length=50, verbose_name="生日", null=True, blank=True)
+    # 微信
+    we_num = models.CharField(max_length=20, verbose_name="微信号码", null=True, blank=True)
+    # 客户端
+    client = models.CharField(max_length=20, verbose_name="客户端", null=True, blank=True)
+    # 渠道
+    channel = models.CharField(max_length=50, verbose_name="渠道", null=True, blank=True)
     def __str__(self):
         return self.name
     class Meta:

@@ -6,8 +6,8 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from users.models import MyUser
 
 
-admin.site.site_title = "逗你玩"
-admin.site.site_header = "逗你玩"
+admin.site.site_title = "痘你完"
+admin.site.site_header = "痘你完"
 class UserCreationForm(forms.ModelForm):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""

@@ -14,7 +14,7 @@ class Customer_ADMIN(admin.ModelAdmin):
     fieldsets = (
         ('客户基本信息', {
 
-                         'fields': ('name', 'phone', 'phone1', 'note', 'qq_num','sex', 'age', 'area', 'store', 'web_staff', 'state', 'order_num', 'order_time', 'hospital', 'doctor', 'register_time')}
+                         'fields': ('name', 'phone', 'phone1', 'qq_num', 'we_num', 'birthday', 'constellation', 'channel', 'client', 'sex', 'age', 'area', 'store', 'web_staff', 'order_num', 'order_time', 'register_time', 'note')}
 
         ),
     )
@@ -52,7 +52,7 @@ class Customer_ADMIN2(admin.ModelAdmin):
     list_display = ['name', 'phone', 'state', 'web_staff']
     fieldsets = (
         ('客户信息', {
-            'fields': ('name', 'phone', 'phone1', 'note', 'qq_num', 'sex', 'age', 'area', 'store', 'front_staff', 'beauty_consultant', 'state', 'order_num', 'order_time', 'hospital', 'doctor','register_time')}
+            'fields': ('name', 'phone', 'phone1', 'qq_num', 'we_num', 'birthday', 'constellation', 'channel', 'client', 'sex', 'age', 'area', 'store', 'front_staff', 'beauty_consultant', 'order_num', 'order_time', 'register_time', 'note')}
          ),
     )
     class Media:
@@ -65,6 +65,13 @@ class Customer_ADMIN2(admin.ModelAdmin):
 
     class Meta:
         model = Customer
+
+
+
+    def save_model(self, request, obj, form, change):
+        if obj.beauty_consultant is not None:
+            obj.state = 1
+        super().save_model(request, obj, form, change)
 
     def get_queryset(self, request):
         qs = super().get_queryset(request)
@@ -170,7 +177,7 @@ class Customer_ADMIN5(admin.ModelAdmin):
     fieldsets = (
         ('客户信息', {
             'fields': (
-            'name', 'phone','phone1', 'note', 'qq_num', 'sex', 'age', 'area', 'store', 'front_staff', 'ill_place', 'ill_time', 'ill_kind')}
+            'name', 'phone','phone1', 'qq_num', 'sex', 'age', 'area', 'store', 'front_staff', 'ill_place', 'ill_time', 'ill_kind', 'note')}
          ),
     )
     readonly_fields = ('name', 'phone', 'store', 'front_staff')
