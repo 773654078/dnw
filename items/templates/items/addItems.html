@@ -28,6 +28,8 @@
                 var price = $("#item_price").val();
                 var freq = $("#frequency").val();
                 var steps =[];
+                var stepcps=[];
+                var stepyqs=[];
                 var num=0;
                 for(var i=0;i<$(".step").length;i++)
                 {
@@ -36,7 +38,18 @@
                        'step_num':num,'step_content':$(".step")[i].value
                     });
                 }
-                console.log(steps);
+                for(var i=0;i<$(".stepcp").length;i++)
+                {
+                    stepcps.push({
+                       'name':$(".stepcp")[i].value,'step':$(".stepcp")[i].id,'num':$(".stepnum")[i].value
+                    });
+                }
+                for(var i=0;i<$(".stepyq").length;i++)
+                {
+                    stepyqs.push({
+                       'name':$(".stepyq")[i].value,'step':$(".stepyq")[i].id
+                    });
+                }
                  $.ajax({
                      url: "/items/api/create/",
                      type: "put",
@@ -45,7 +58,9 @@
                          "item_name": name,
                          "item_price": price,
                          "frequency": freq,
-                         "steps": steps
+                         "steps": steps,
+                         "product":stepcps,
+                         "instrument":stepyqs
                     }),
                      success: function (data) {
                          $("#test").append("<p> 数据增加成功：" + data.text + "</p>");
@@ -64,49 +79,103 @@
 			var i=0;
 			function addRow(){
 				i+=1;
+				var j=i;
 				var node=document.createElement("li");
-				node.classList.add("input-group");
-				node.classList.add("container");
+				node.classList.add("form-group");
 				node.classList.add("form-inline");
-                node.id="li" + i;
-				var diver1=document.createElement("div");
-				diver1.classList.add("form-group");
-				diver1.setAttribute("style","float:lef")
-				diver1.innerHTML=i;
-                var inputer=document.createElement("input");
-                inputer.classList.add("step");
-                inputer.classList.add("form-control");
-                inputer.setAttribute("style","width:80%");
-                inputer.id = i;
-                var diver2=document.createElement("div");
-                diver2.classList.add("form-group");
+				node.id=i;
+				var diver=document.createElement("div");
+				diver.classList.add("col-md-1");
+				diver.innerHTML="步骤"+i;
+				var inputer=document.createElement("input");
+				inputer.classList.add("col-md-8");
+				inputer.classList.add("step");
+				var diver2=document.createElement("div");
+				diver2.classList.add("col-md-3");
+				diver2.classList.add("form-group");
+				var ulcp=document.createElement("ul");
+				var ulyq=document.createElement("ul");
 				var btn1=document.createElement("input");
 				btn1.setAttribute("type","button");
-                btn1.setAttribute("value","添加产品");
-                btn1.setAttribute("onclick","addgoods()")
-                var btn2=document.createElement("input");
+				btn1.value="添加产品";
+				var btn2=document.createElement("input");
 				btn2.setAttribute("type","button");
-                btn2.setAttribute("value","添加仪器");
-                btn2.setAttribute("onclick","addinstrument()")
-                diver2.appendChild(btn1);
-                diver2.appendChild(btn2);
-				node.appendChild(diver1);
+				btn2.onclick=addinstrument;
+				btn2.value="添加仪器";
+				diver2.appendChild(btn1);
+				diver2.appendChild(btn2);
+				node.appendChild(diver);
 				node.appendChild(inputer);
 				node.appendChild(diver2);
+				node.appendChild(ulcp);
+				node.appendChild(ulyq);
 				document.getElementById("a").appendChild(node);
+				btn1.onclick=function(){
+					var node1=document.createElement("li");
+					node1.setAttribute("style","width:80%");
+					node1.classList.add("form-group");
+					var divercp=document.createElement("div");
+					divercp.classList.add("col-sm-2");
+					divercp.innerHTML="产品：";
+					var inputercp=document.createElement("input");
+					inputercp.setAttribute("type","text");
+					inputercp.classList.add("col-sm-3");
+					inputercp.classList.add("stepcp");
+					inputercp.id=j;
+					var diveryq=document.createElement("div");
+					diveryq.classList.add("col-sm-2");
+					diveryq.innerHTML="数量：";
+					var inputernum=document.createElement("input");
+					inputernum.classList.add("col-sm-3");
+					inputernum.setAttribute("type","text");
+					inputernum.classList.add("stepnum");
+					node1.appendChild(divercp);
+					node1.appendChild(inputercp);
+					node1.appendChild(diveryq);
+					node1.appendChild(inputernum);
+					var btnsc=document.createElement("input");
+					btnsc.onclick=deleterow;
+					btnsc.classList.add("col-sm-2");
+					btnsc.setAttribute("type","button");
+					btnsc.value="删除";
+					node1.appendChild(btnsc);
+					ulcp.appendChild(node1);
+					function deleterow(){
+						ulcp.removeChild(node1);
+					};
+				};
+				function addinstrument(){
+					var node2=document.createElement("li");
+					node2.setAttribute("style","width:80%");
+					node2.classList.add("form-group");
+					var diveryq=document.createElement("div");
+					diveryq.classList.add("col-sm-2");
+					diveryq.innerHTML="仪器：";
+					var inputeryq=document.createElement("input");
+					inputeryq.setAttribute("type","text");
+					inputeryq.classList.add("col-sm-8");
+					inputeryq.classList.add("stepyq");
+					node2.appendChild(diveryq);
+					node2.appendChild(inputeryq);
+					inputeryq.id=j;
+					var btnsc=document.createElement("input");
+					btnsc.onclick=deleterow;
+					btnsc.classList.add("col-sm-2");
+					btnsc.setAttribute("type","button");
+					btnsc.value="删除";
+					node2.appendChild(btnsc);
+					ulyq.appendChild(node2);
+					function deleterow(){
+						ulyq.removeChild(node2);
+					};
+				};
 			};
 			function delRow(){
 				var parent=document.getElementById("a");
-				var child=document.getElementById("li"+i);
+				var child=document.getElementById(i);
 				parent.removeChild(child);
 				i-=1;
 			};
-			function addgoods() {
-
-            }
-            function addinstrument() {
-                
-            }
     </script>
 <style type="text/css">
     body

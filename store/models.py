@@ -17,6 +17,31 @@ class Customer(models.Model):
     age_tuple = (
         (0, u'男'),
         (1, u'女'),
+        (999, u'请选择'),
+    )
+
+    channel_tuple = (
+        (0,u'抖音'),
+        (1,u'微博'),
+        (2,u'团购'),
+        (999, u'请选择'),
+    )
+
+    constellation_tuple = (
+        (0, u'白羊座'),
+        (1, u'金牛座'),
+        (2, u'双子座'),
+        (3, u'巨蟹座'),
+        (4, u'狮子座'),
+        (5, u'处女座'),
+        (6, u'天秤座'),
+        (7, u'天蝎座'),
+        (8, u'射手座'),
+        (9, u'摩羯座'),
+        (10, u'水瓶座'),
+        (11, u'双鱼座'),
+        (999, u'请选择')
+
     )
 
     is_from_web = models.BooleanField(verbose_name="是否由网络客服录入", default=True, editable=False)
@@ -28,12 +53,12 @@ class Customer(models.Model):
     state = models.IntegerField(choices=state_tuple, verbose_name="赴约状态", default=0)
     store = models.ForeignKey(LastStore, verbose_name="门店", related_name='web_staff', on_delete=models.DO_NOTHING, null=True, blank=True)
     web_staff = models.ForeignKey(MyUser, verbose_name="网络客服", related_name='web_staff', on_delete=models.DO_NOTHING, null=True, blank=True)
-    sex = models.IntegerField(choices=age_tuple, verbose_name="性别", default='', blank=True)
+    sex = models.IntegerField(choices=age_tuple, verbose_name="性别", default=999,null=True ,blank=True)
     age = models.CharField(max_length=20, verbose_name="年龄", default='', blank=True)
-    constellation = models.CharField(max_length=20, verbose_name="星座", default='', blank=True)
+    constellation = models.IntegerField(choices=constellation_tuple, verbose_name="星座", default=999, blank=True)
     address = models.CharField(max_length=50, verbose_name="住址", default='', blank=True)
     job = models.CharField(max_length=20, verbose_name="职业", default='', blank=True)
-    order_time = models.CharField(max_length=50, verbose_name="预约时间", null=True, blank=True)
+    order_time = models.DateTimeField(verbose_name="预约到店时间", null=True, blank=True)
     ill_place = models.CharField(max_length=50, verbose_name="患病部位", default='', blank=True)
     ill_time = models.CharField(max_length=20, verbose_name="患病时间", default='', blank=True)
     ill_kind = models.CharField(max_length=50, verbose_name="患病种类", default='', blank=True)
@@ -55,7 +80,7 @@ class Customer(models.Model):
     # 接待医生
     doctor = models.CharField(max_length=50, verbose_name="接待医生", null=True, blank=True)
     # 登记时间
-    register_time = models.CharField(max_length=50, verbose_name="登记时间", null=True, blank=True)
+    register_time = models.DateTimeField(verbose_name="登记时间", null=True, blank=True)
 
     # 新增字段 2018-8-11
     # 区域
@@ -70,7 +95,14 @@ class Customer(models.Model):
     # 客户端
     client = models.CharField(max_length=20, verbose_name="客户端", null=True, blank=True)
     # 渠道
-    channel = models.CharField(max_length=50, verbose_name="渠道", null=True, blank=True)
+    channel = models.IntegerField(choices=channel_tuple, verbose_name="渠道", default=999, null=True, blank=True)
+
+    # 新增字段
+
+    # 到店时间
+    arrive_time = models.DateTimeField(verbose_name="到店时间", null=True, blank=True)
+
+
     def __str__(self):
         return self.name
     class Meta:

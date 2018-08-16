@@ -9,12 +9,12 @@ from users.models import MyUser
 #网络客服
 class Customer_ADMIN(admin.ModelAdmin):
     search_fields = ['name', 'phone']
-    list_display = ['name', 'phone', 'state', 'store']
+    list_display = ['state', 'name', 'phone', 'order_time', 'web_staff','register_time', 'arrive_time', 'store']
     #
     fieldsets = (
         ('客户基本信息', {
 
-                         'fields': ('name', 'phone', 'phone1', 'qq_num', 'we_num', 'birthday', 'constellation', 'channel', 'client', 'sex', 'age', 'area', 'store', 'web_staff', 'order_num', 'order_time', 'register_time', 'note')}
+                         'fields': ('name', 'phone', 'phone1', 'qq_num', 'we_num', 'birthday', 'constellation', 'channel', 'client', 'sex', 'age', 'area', 'store', 'order_num', 'order_time', 'note')}
 
         ),
     )
@@ -25,9 +25,11 @@ class Customer_ADMIN(admin.ModelAdmin):
         if db_field.name == "web_staff":
             kwargs["queryset"] = MyUser.objects.filter(job=2)
         return super().formfield_for_foreignkey(db_field, request, **kwargs)
-    # def save_model(self, request, obj, form, change):
-    #     obj.web_staff = request.user
-    #     super().save_model(request, obj, form, change)
+    def save_model(self, request, obj, form, change):
+        if request.user.job == 2:
+            obj.web_staff = request.user
+        obj.register_time = datetime.datetime.now()
+        super().save_model(request, obj, form, change)
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         web_staff = request.user.id
@@ -69,8 +71,11 @@ class Customer_ADMIN2(admin.ModelAdmin):
 
 
     def save_model(self, request, obj, form, change):
-        if obj.beauty_consultant is not None:
+        # if obj.beauty_consultant is not None:
+        #     obj.state = 1
+        if obj.state == 0:
             obj.state = 1
+            obj.arrive_time = datetime.datetime.now()
         super().save_model(request, obj, form, change)
 
     def get_queryset(self, request):
