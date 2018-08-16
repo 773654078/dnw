@@ -6,18 +6,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eea0b135-18c9-4ba6-933b-8da27e3f3d1a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/store/migrations/0024_auto_20180815_2327.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/store/migrations/0025_auto_20180815_2328.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/store/migrations/0026_auto_20180815_2334.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/store/migrations/0027_auto_20180815_2342.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/store/migrations/0028_auto_20180816_0004.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/store/migrations/0029_auto_20180816_0008.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/store/migrations/0030_auto_20180816_0858.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/items/templates/items/addItems.html" afterPath="$PROJECT_DIR$/items/templates/items/addItems.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/store/admin.py" afterPath="$PROJECT_DIR$/store/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/store/models.py" afterPath="$PROJECT_DIR$/store/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -78,7 +68,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/store/admin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="665">
@@ -88,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="55" lean-forward="false" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
+            <state relative-caret-position="517">
+              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -271,11 +261,11 @@
         <option value="$PROJECT_DIR$/order/__init__.py" />
         <option value="$PROJECT_DIR$/order/models.py" />
         <option value="$PROJECT_DIR$/users/admin.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/items/templates/items/addItems.html" />
         <option value="$PROJECT_DIR$/items/views.py" />
         <option value="$PROJECT_DIR$/store/models.py" />
         <option value="$PROJECT_DIR$/store/admin.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -572,7 +562,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534292360200</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="&#10;&#10;2018/8/15：&#10;1. 网络客服，登记时间删除。 done&#10;&#10;2. 预约时间，做成年月日时分的格式。&#9;done&#10;&#10;3. 星座，做成下拉。done&#10;&#10;4. 渠道，做成下拉：暂时加入三个，抖音，微博，团购。其他的在后台添加。 done&#10;&#10;5. 性别。默认的地方改为请选择。 done&#10;&#10;6. 网络咨询师看到的客户信息依次为：状态，姓名，手机号，预约到店时间，网络咨询，咨询时间，到店时间，预约门店&#10;&#10;7. 状态转为未到店和已到店。未到店转为已到店的条件是，客户到店时前台录入信息点提交时候转变。 done&#10;&#10;8. 到店时间改为前台录入信息的时间，也就是状态从未到店变为已到店的时候，初始状态默认为空。 done&#10;&#10;9. 登记时间自动录入 done&#10;&#10;10. 网络客服自动录入 done">
+      <created>1534383555855</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1534383555855</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -594,7 +591,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3441341" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18763326" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18763326" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="manage.py@vin码查询" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -670,7 +667,8 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/773654078/dnw&#10;&#10;# Conflicts:&#10;#&#9;vin码查询/__pycache__/settings.cpython-36.pyc&#10;#&#9;vin码查询/__pycache__/urls.cpython-36.pyc" />
     <MESSAGE value="Merge branch 'master' of https://github.com/773654078/dnw&#10;&#10;# Conflicts:&#10;#&#9;创建项目后台api完成" />
     <MESSAGE value="1. 备注放在下面，且输入方式改为多行文本。 &#9;&#9;done&#10;2. 增加星座、生日、微信、渠道、客户端字段。           done&#10;3. 将性别输入方式改为单选。&#9;&#9;&#9;&#9;done&#10;4. 赴约状态、医院、接待字段取消，赴约状态需要自动进行修改。(赴约状态在前台分配美容咨询师时会自动变为已到店)&#10;5. 网站title更正为“痘你完”。&#9;&#9;&#9;&#9;done&#10;6. 修改最高级用户密码。新密码：1234qwer&#9;&#9; done" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 备注放在下面，且输入方式改为多行文本。 &#9;&#9;done&#10;2. 增加星座、生日、微信、渠道、客户端字段。           done&#10;3. 将性别输入方式改为单选。&#9;&#9;&#9;&#9;done&#10;4. 赴约状态、医院、接待字段取消，赴约状态需要自动进行修改。(赴约状态在前台分配美容咨询师时会自动变为已到店)&#10;5. 网站title更正为“痘你完”。&#9;&#9;&#9;&#9;done&#10;6. 修改最高级用户密码。新密码：1234qwer&#9;&#9; done" />
+    <MESSAGE value="&#10;&#10;2018/8/15：&#10;1. 网络客服，登记时间删除。 done&#10;&#10;2. 预约时间，做成年月日时分的格式。&#9;done&#10;&#10;3. 星座，做成下拉。done&#10;&#10;4. 渠道，做成下拉：暂时加入三个，抖音，微博，团购。其他的在后台添加。 done&#10;&#10;5. 性别。默认的地方改为请选择。 done&#10;&#10;6. 网络咨询师看到的客户信息依次为：状态，姓名，手机号，预约到店时间，网络咨询，咨询时间，到店时间，预约门店&#10;&#10;7. 状态转为未到店和已到店。未到店转为已到店的条件是，客户到店时前台录入信息点提交时候转变。 done&#10;&#10;8. 到店时间改为前台录入信息的时间，也就是状态从未到店变为已到店的时候，初始状态默认为空。 done&#10;&#10;9. 登记时间自动录入 done&#10;&#10;10. 网络客服自动录入 done" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;&#10;2018/8/15：&#10;1. 网络客服，登记时间删除。 done&#10;&#10;2. 预约时间，做成年月日时分的格式。&#9;done&#10;&#10;3. 星座，做成下拉。done&#10;&#10;4. 渠道，做成下拉：暂时加入三个，抖音，微博，团购。其他的在后台添加。 done&#10;&#10;5. 性别。默认的地方改为请选择。 done&#10;&#10;6. 网络咨询师看到的客户信息依次为：状态，姓名，手机号，预约到店时间，网络咨询，咨询时间，到店时间，预约门店&#10;&#10;7. 状态转为未到店和已到店。未到店转为已到店的条件是，客户到店时前台录入信息点提交时候转变。 done&#10;&#10;8. 到店时间改为前台录入信息的时间，也就是状态从未到店变为已到店的时候，初始状态默认为空。 done&#10;&#10;9. 登记时间自动录入 done&#10;&#10;10. 网络客服自动录入 done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1026,14 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="55" lean-forward="false" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/new_file(1).html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
@@ -1098,6 +1088,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
           <caret line="77" column="12" lean-forward="false" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
