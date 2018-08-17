@@ -6,8 +6,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eea0b135-18c9-4ba6-933b-8da27e3f3d1a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/items/migrations/0005_auto_20180817_0914.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/store/migrations/0031_auto_20180817_0914.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/items/models.py" afterPath="$PROJECT_DIR$/items/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/items/views.py" afterPath="$PROJECT_DIR$/items/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,21 +54,11 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/items/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="111">
+              <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/store/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="60" column="56" lean-forward="false" selection-start-line="60" selection-start-column="56" selection-end-line="60" selection-end-column="56" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -81,8 +76,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="48" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -140,6 +135,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/items/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="893">
+              <caret line="50" column="60" lean-forward="false" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="addItems.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/items/templates/items/addItems.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -191,8 +196,8 @@
       <find>P</find>
       <find>productItems</find>
       <find>conso</find>
-      <find>create</find>
       <find>sav</find>
+      <find>create</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -253,7 +258,6 @@
         <option value="$PROJECT_DIR$/product/admin.py" />
         <option value="$PROJECT_DIR$/product/models.py" />
         <option value="$PROJECT_DIR$/items/serializers.py" />
-        <option value="$PROJECT_DIR$/items/models.py" />
         <option value="$PROJECT_DIR$/order/admin.py" />
         <option value="$PROJECT_DIR$/vin码查询/settings.py" />
         <option value="$PROJECT_DIR$/product/apps.py" />
@@ -262,10 +266,11 @@
         <option value="$PROJECT_DIR$/order/models.py" />
         <option value="$PROJECT_DIR$/users/admin.py" />
         <option value="$PROJECT_DIR$/items/templates/items/addItems.html" />
-        <option value="$PROJECT_DIR$/items/views.py" />
         <option value="$PROJECT_DIR$/store/models.py" />
         <option value="$PROJECT_DIR$/store/admin.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/items/models.py" />
+        <option value="$PROJECT_DIR$/items/views.py" />
       </list>
     </option>
   </component>
@@ -308,6 +313,11 @@
             <path>
               <item name="dnw" type="b2602c69:ProjectViewProjectNode" />
               <item name="dnw" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dnw" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dnw" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="dnw" type="b2602c69:ProjectViewProjectNode" />
@@ -569,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534383555855</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="&#10;&#10;2018/8/15：&#10;1. 网络客服，登记时间删除。 done&#10;&#10;2. 预约时间，做成年月日时分的格式。&#9;done&#10;&#10;3. 星座，做成下拉。done&#10;&#10;4. 渠道，做成下拉：暂时加入三个，抖音，微博，团购。其他的在后台添加。 done&#10;&#10;5. 性别。默认的地方改为请选择。 done&#10;&#10;6. 网络咨询师看到的客户信息依次为：状态，姓名，手机号，预约到店时间，网络咨询，咨询时间，到店时间，预约门店&#10;&#10;7. 状态转为未到店和已到店。未到店转为已到店的条件是，客户到店时前台录入信息点提交时候转变。 done&#10;&#10;8. 到店时间改为前台录入信息的时间，也就是状态从未到店变为已到店的时候，初始状态默认为空。 done&#10;&#10;9. 登记时间自动录入 done&#10;&#10;10. 网络客服自动录入 done">
+      <created>1534383633346</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1534383633346</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -882,16 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/items/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/product/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1066,13 +1073,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/items/views.py">
+    <entry file="file://$PROJECT_DIR$/store/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="665">
+          <caret line="77" column="12" lean-forward="false" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,18 +1089,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/store/admin.py">
+    <entry file="file://$PROJECT_DIR$/items/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="77" column="12" lean-forward="false" selection-start-line="77" selection-start-column="12" selection-end-line="77" selection-end-column="12" />
+        <state relative-caret-position="893">
+          <caret line="50" column="60" lean-forward="false" selection-start-line="50" selection-start-column="60" selection-end-line="50" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/items/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="34" column="29" lean-forward="true" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="48" selection-end-column="40" />
           <folding />
         </state>
       </provider>

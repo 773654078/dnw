@@ -24,6 +24,7 @@ def item_create(request):
         item_data['item_name'] = data['item_name']
         item_data['item_price'] = data['item_price']
         item_data['frequency'] = data['frequency']
+        item_data['classify'] = data['classify']
         serializer = ItemSerializer(item, data=item_data)
         if serializer.is_valid():
             serializer.save()

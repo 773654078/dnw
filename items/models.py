@@ -11,6 +11,8 @@ class Item(models.Model):
     item_price = models.IntegerField(verbose_name = '价格', null=True)
     #次数
     frequency = models.IntegerField(verbose_name = '次数', null=True)
+    #类别
+    classify = models.CharField(max_length=30, verbose_name="项目类别", null=True)
     def __str__(self):
         return self.item_name
 #步骤
@@ -33,7 +35,8 @@ class Item_Product(models.Model):
     step = models.IntegerField(verbose_name='序号', null=True)
     #数量
     num = models.IntegerField(verbose_name='数量', null=True)
-
+    #用时
+    time = models.IntegerField(verbose_name='用时', null=True)
 
 
 #项目_仪器表
@@ -44,3 +47,5 @@ class Item_Instrument(models.Model):
     instrument = models.ForeignKey(Instrument, verbose_name="仪器", on_delete=models.DO_NOTHING, null=True)
     #第n步
     step = models.IntegerField(verbose_name='序号', null=True)
+    # 用时
+    time = models.IntegerField(verbose_name='用时', null=True)
