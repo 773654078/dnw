@@ -5,6 +5,9 @@ urlpatterns = [
     path('order/', views.testone),
     #获得表单信息的url
     path('getproduct/', views.get_product_json),
-    #获得搜索提示的URL
-    path('get_search_result/', views.search_auto_result)
+    #模糊搜索获取所有产品名的URL
+    path('get_product_name/', views.get_product_name),
+    #模糊搜索获取所有仪器名的URL
+    path('get_instrument_name/', views.get_instrument_name),
+
 ]

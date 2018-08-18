@@ -35,6 +35,8 @@ class Item_Product(models.Model):
     step = models.IntegerField(verbose_name='序号', null=True)
     #数量
     num = models.IntegerField(verbose_name='数量', null=True)
+    #单位
+    unit = models.CharField(max_length=30, verbose_name="单位", null=True)
     #用时
     time = models.IntegerField(verbose_name='用时', null=True)
 

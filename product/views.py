@@ -3,7 +3,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import json
-from .models import Product
+from .models import Product, Instrument
 from django.views.decorators.csrf import csrf_exempt
 #ajax获取列表信息
 @csrf_exempt
@@ -45,20 +45,32 @@ def get_product_json(request):
 
     return HttpResponse(json.dumps(dict))
 
-#ajax搜索框自动提示
+#测试一
+def testone(request):
+    return render(request, "product/test.html")
+
+#ajax模糊查询获取产品名
 @csrf_exempt
-def search_auto_result(request):
+def get_product_name(request):
     keyword = request.GET.get('kwd')
-    # print(keyword)
     product_List = Product.objects.filter(name__contains=keyword)
     product_List = product_List.values()
     product_List = [entry for entry in product_List]
     dict = {}
     dict['name'] = []
-    for atuo_list in product_List:
-           dict['name'].append(atuo_list['name'])
+    for auto_list in product_List:
+           dict['name'].append(auto_list['name'])
     return HttpResponse(json.dumps(dict))
 
-#测试一
-def testone(request):
-    return render(request, "product/test.html")
+
+#ajax模糊查询获取仪器名
+def get_instrument_name(request):
+    keyword = request.GET.get('kwd')
+    instrument_list = Instrument.objects.filter(name__contains=keyword)
+    instrument_list = instrument_list.values()
+    instrument_list = [entry for entry in instrument_list]
+    dict = {}
+    dict['name'] = []
+    for auto_list in instrument_list:
+        dict['name'].append(auto_list['name'])
+    return HttpResponse(json.dumps(dict))

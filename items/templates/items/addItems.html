@@ -20,8 +20,59 @@
     <link href="https://cdn.bootcss.com/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
     <!--JavaScript部分-->
     <script type="text/javascript">
-       $(document).ready(function() {
 
+    function get_product_name() {
+        $('.get_product_name').keyup(function () {
+            $.ajax({
+                url: "http://127.0.0.1:8000/product/get_product_name/",
+                datatype: "json",
+                contentType: "application/json",
+                data: {
+                    kwd: $(this).val()
+                },
+                type: "GET",
+                success: function (data) {
+                    var jsonData = JSON.parse(data);
+                    var result = new Array();
+                    result = jsonData.name;
+                    $('.get_product_name').autocomplete(
+                        {
+                            source: result
+                        })
+                }
+            })
+        });
+
+    }
+
+    function get_instrument_name() {
+        $('.get_instrument_name').keyup(function () {
+            $.ajax({
+                url: "http://127.0.0.1:8000/product/get_instrument_name/",
+                datatype: "json",
+                contentType: "application/json",
+                data: {
+                    kwd: $(this).val()
+                },
+                type: "GET",
+                success: function (data) {
+                    var jsonData = JSON.parse(data);
+                    var result = new Array();
+                    result = jsonData.name;
+                    $('.get_instrument_name').autocomplete(
+                        {
+                            source: result
+                        })
+                }
+            })
+        });
+
+    }
+
+
+
+
+       $(document).ready(function() {
 
             $("#commit").click(function (){
                 var name = $("#item_name").val();
@@ -121,6 +172,7 @@
 					inputercp.setAttribute("type","text");
 					inputercp.classList.add("col-sm-3");
 					inputercp.classList.add("stepcp");
+					inputercp.classList.add("get_product_name");
 					inputercp.id=j;
 					var diveryq=document.createElement("div");
 					diveryq.classList.add("col-sm-2");
@@ -140,6 +192,7 @@
 					btnsc.value="删除";
 					node1.appendChild(btnsc);
 					ulcp.appendChild(node1);
+					get_product_name();
 					function deleterow(){
 						ulcp.removeChild(node1);
 					};
@@ -155,6 +208,7 @@
 					inputeryq.setAttribute("type","text");
 					inputeryq.classList.add("col-sm-8");
 					inputeryq.classList.add("stepyq");
+					inputeryq.classList.add("get_instrument_name");
 					node2.appendChild(diveryq);
 					node2.appendChild(inputeryq);
 					inputeryq.id=j;
@@ -165,6 +219,7 @@
 					btnsc.value="删除";
 					node2.appendChild(btnsc);
 					ulyq.appendChild(node2);
+					get_instrument_name();
 					function deleterow(){
 						ulyq.removeChild(node2);
 					};
